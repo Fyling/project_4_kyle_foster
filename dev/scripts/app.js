@@ -95,24 +95,24 @@ app.displayLyrics = function(text) {
 //getLanguage
 app.getLanguage = function(text) {
   const chosenLanguage = $(this).attr("id");
-  // app.translate("shakespeare", text);
+  // app.translate('yoda',"hello my name is yoda" );
 };
 
 //translate
 app.translate = function(language, lyrics) {
   console.log(`Language: ${language}, Lyrics: ${lyrics}`);
   $.ajax({
-    url: `https://api.funtranslations.com/translate/shakespeare`,
+    url: `https://api.funtranslations.com/translate/${language}`,
     method: "GET",
     dataType: "json",
     data: {
-      format: "json",
-      text: `This shit, that ice cold Michelle Pfeiffer, that white gold This one, for them hood girls Them good girls, straight masterpieces Stylin', while in Livin' it up in the city Got Chucks on with Saint Laurent Gotta kiss myself, I'm so pretty I'm too hot (hot damn) Called a police and a fireman I'm too hot (hot damn) Make a dragon wanna retire, man I'm too hot (hot damn) Say my name, you know who I am I'm too hot (hot damn) Am I bad 'bout that money? Break it down Girls hit your hallelujah (wooh) Girls hit your hallelujah (wooh) Girls hit your hallelujah (wooh) 'Cause Uptown Funk gon' give it to you (wooh) 'Cause Uptown Funk gon' give it to you 'Cause Uptown Funk gon' give it to you Saturday night, and we in the spot Don't believe me, just watch, come on! Don't believe me, just watch Don't believe me, just watch Don't believe me, just watch`
+      text: `${lyrics}`,
+      format: "json"
     }
   }).then(res => {
     // console.log(res);
     const translatedLyrics = res.contents.translated;
-    console.log(translatedLyrics)
+    console.log(translatedLyrics);
 
     app.displayTranslatedLyrics(translatedLyrics);
   });
@@ -130,7 +130,8 @@ app.displayTranslatedLyrics = function(text) {
 
 app.init = function() {
   app.getUserInput();
-  app.translate();
+  // app.translate();
+  app.translate('yoda', "hello my name is yoda")
 };
 
 $(function() {
