@@ -4,11 +4,15 @@ app.baseUrl = "http://api.musixmatch.com/ws/1.1/";
 
 //getUserInput
 app.getUserInput = function() {
-  $('').on('submit', function(){
-    const userInput = $('').val()
+  $(".form__search").on("submit", function(e) {
+    e.preventDefault();
+    $(".list__results").empty();
+    const userInput = $(".input__search").val();
     app.searchTracks(userInput);
-  })
-}
+
+    // scroll to results page
+  });
+};
 
 //searchTracks
 app.searchTracks = function(userInput) {
@@ -30,46 +34,94 @@ app.searchTracks = function(userInput) {
 
 //getTrackInfo (names and ids)
 app.getTrackInfo = function(tracks) {
-  const trackNames = tracks.map(song => song.track.track_name);
-  const trackIds = tracks.map(song => song.track.track_id);
-  console.log(trackNames, trackIds);
-  app.displayResults(trackNames);
+  const tracksObject = tracks.map(song => {
+    return {
+      track: `${song.track.track_name}`,
+      artist: `${song.track.artist_name}`,
+      id: `${song.track.track_id}`
+    };
+  });
+
+  app.displayResults(tracksObject);
 };
 
 //displayResults
-app.displayResults = function(names) {
-
-
-
-}
+app.displayResults = function(trackInfo) {
+  for (let i = 0; i < 10; i++) {
+    $(".list__results").append(`
+      <li class ="list__results__item" id = "${trackInfo[i].id}">
+        <button class= "btn__results">
+          <h3>${trackInfo[i].track}</h3>
+          <p>${trackInfo[i].artist}</p>         
+        </button>
+      </li>
+    `);
+  }
+  app.chooseResult();
+};
 
 //chooseResult
+app.chooseResult = function() {
+  $(".list__results").on("click", ".list__results__item", function() {
+    const chosenTrackId = $(this).attr("id");
+    app.getLyrics(chosenTrackId);
+  });
+};
 
 //getLyrics
+app.getLyrics = function(id) {
+  $.ajax({
+    url: `${app.baseUrl}track.lyrics.get`,
+    method: "GET",
+    dataType: "jsonp",
+    data: {
+      apikey: app.key,
+      format: "jsonp",
+      track_id: `${id}`
+    }
+  }).then(res => {
+    const lyrics = res.message.body.lyrics.lyrics_body;
+
+    app.displayLyrics(lyrics);
+  });
+};
 
 //displayLyrics
+app.displayLyrics = function(text) {
+  $(".lyrics").text(`${text}`);
+  app.getLanguage(text);
+};
 
 //getLanguage
+app.getLanguage = function(text) {
+  const chosenLanguage = $(this).attr("id");
+  // app.translate("shakespeare", text);
+};
 
 //translate
 app.translate = function(language, lyrics) {
+  console.log(`Language: ${language}, Lyrics: ${lyrics}`);
   $.ajax({
-    url: `https://api.funtranslations.com/translate/${language}`,
+    url: `https://api.funtranslations.com/translate/shakespeare`,
     method: "GET",
     dataType: "json",
     data: {
       format: "json",
-      text: `${lyrics}`
+      text: `This shit, that ice cold Michelle Pfeiffer, that white gold This one, for them hood girls Them good girls, straight masterpieces Stylin', while in Livin' it up in the city Got Chucks on with Saint Laurent Gotta kiss myself, I'm so pretty I'm too hot (hot damn) Called a police and a fireman I'm too hot (hot damn) Make a dragon wanna retire, man I'm too hot (hot damn) Say my name, you know who I am I'm too hot (hot damn) Am I bad 'bout that money? Break it down Girls hit your hallelujah (wooh) Girls hit your hallelujah (wooh) Girls hit your hallelujah (wooh) 'Cause Uptown Funk gon' give it to you (wooh) 'Cause Uptown Funk gon' give it to you 'Cause Uptown Funk gon' give it to you Saturday night, and we in the spot Don't believe me, just watch, come on! Don't believe me, just watch Don't believe me, just watch Don't believe me, just watch`
     }
   }).then(res => {
+    // console.log(res);
     const translatedLyrics = res.contents.translated;
+    console.log(translatedLyrics)
+
     app.displayTranslatedLyrics(translatedLyrics);
   });
 };
 
 //displayTranslatedLyrics
 app.displayTranslatedLyrics = function(text) {
-
+  // console.log(text)
+  $(".lyrics__translated").text(`${text}`);
 };
 
 // STRETCH GOAL: speakTranslatedLyrics
@@ -77,7 +129,8 @@ app.displayTranslatedLyrics = function(text) {
 //reset
 
 app.init = function() {
-  app.searchTracks('drake');
+  app.getUserInput();
+  app.translate();
 };
 
 $(function() {
