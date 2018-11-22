@@ -80,49 +80,58 @@ app.getLyrics = function(id) {
       track_id: `${id}`
     }
   }).then(res => {
-    // console.log(res.message.body);
+    console.log(res.message.body);
     const lyrics = res.message.body.lyrics.lyrics_body;
-    console.log(lyrics);
     app.displayLyrics(lyrics);
-
   });
 };
 
 //displayLyrics
 app.displayLyrics = function(text) {
   $(".lyrics").text(`${text}`);
-  app.getLanguage(text);
+  app.cleanLyrics(text);
+};
+
+//cleanLyrics
+app.cleanLyrics = function(text) {
+  const cleanLyrics = text.split("\n").join("xyz");
+  app.getLanguage(cleanLyrics);
 };
 
 //getLanguage
 app.getLanguage = function(text) {
   const chosenLanguage = $(this).attr("id");
-  // app.translate('yoda',"hello my name is yoda" );
+  app.translate("article_rewrite", text);
 };
 
 //translate
 app.translate = function(language, lyrics) {
-  console.log(`Language: ${language}, Lyrics: ${lyrics}`);
   $.ajax({
     url: `https://api.funtranslations.com/translate/${language}`,
     method: "GET",
     dataType: "json",
     data: {
-      text: `${lyrics}`,
+      text: `"${lyrics}"`,
       format: "json"
     }
-  }).then(res => {
-    // console.log(res);
-    const translatedLyrics = res.contents.translated;
-    console.log(translatedLyrics);
+  })
+    .then(res => {
+      const translatedLyrics = res.contents.translated;
+      app.formatLyrics(translatedLyrics);
+    })
+    .fail(() => {
+      console.log("Ajax failed");
+    });
+};
 
-    app.displayTranslatedLyrics(translatedLyrics);
-  });
+//formatLyrics
+app.formatLyrics = function(text) {
+  const formatText = text.split("xyz").join("\n");
+  app.displayTranslatedLyrics(formatText);
 };
 
 //displayTranslatedLyrics
 app.displayTranslatedLyrics = function(text) {
-  // console.log(text)
   $(".lyrics__translated").text(`${text}`);
 };
 
@@ -133,7 +142,7 @@ app.displayTranslatedLyrics = function(text) {
 app.init = function() {
   app.getUserInput();
   // app.translate();
-  app.translate('yoda', "hello my name is yoda")
+  // app.translate('yoda', "hello my name is yoda")
 };
 
 $(function() {
