@@ -1,22 +1,46 @@
 .header {
     height: 100vh;
-    background: navajowhite;
+    background: $lightShade; 
+    @include titleFont(2rem, 1.5);
+
     &__content {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: start;
         height: 100vh;
-    
     }
 
     .form__search {
         width: 60%;
+        font-family: $mainFont;
 
-    }
-    .input__search {
-        width: 100%;
-        line-height: 2;
+        .input__search {
+            width: 100%;
+            line-height: 2;
+            background: $darkShade;
+            color: $accentShade;
+            margin: 1.5rem 0;
+            padding: 1rem 2rem 1rem 1rem;
+            border: none;
+//TRANSITION THIS
+            &:focus {
+                background: $accentShade;
+                color: $darkShade;
+            }
+        }
+        
+        .btn__search {
+            width: 30%;
+            padding: 1rem 1rem;
+            background: $lightShade;
+            border: 0.2rem solid $darkShade;
+//TRANSITION THIS
+            &:hover {
+                background: $darkShade;
+                color: $accentShade;
+            }
+        }
     }
 
 }

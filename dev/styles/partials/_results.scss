@@ -1,27 +1,53 @@
 .section__results {
-    // height: 50vh;
-    background-color: lightskyblue;
     margin: 0;
-
-
-
-    .list__results {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        &__item {
-            width: 50%;
-        }
-    }
+    background: $secondaryDarkShade;
+    padding: 2rem 0;
     
-    .btn__results {
-        text-align: left;
-        background: none;
-        border: none;
-        padding: 1rem 0;
-        width: 100%;
-       
+    &__content {
+        @include titleFont(1.8rem, 1);
+        color: $accentShade;
+        padding: 2rem;
+   
+
+        .list__results {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        
+            &__item {
+                width: 50%;
+            }
+        }
+        
+        .btn__results {
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 1rem 0;
+            width: 100%;
+            @include mainFont(1.8rem, 1);
+            color: $accentShade;
+
+            &:hover {
+// CHANGE THESE TO GROW
+                & h3 {
+                    text-decoration: underline;
+                    text-decoration-color: $accentShade;
+                }
+
+                & p {
+                    text-decoration: underline;
+                    text-decoration-color: $lightShade;
+                }
+            }
+            
+//NAME A CLASS FOR THESE IN THE JS
+            p {
+                color: $lightShade;
+                font-size: 1.6rem;
+            }
+        }
     }
 }

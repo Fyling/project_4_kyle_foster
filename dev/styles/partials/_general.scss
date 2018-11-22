@@ -1,26 +1,32 @@
-$black-shade: #171717;
-$white-shade: #fafafa;
-$grey-shade: #e0e0e0;
-$accent: #0090d2;
-$secondary-color: #b64949;
+//color variables start here
 
+$darkShade: #000;
+$secondaryDarkShade: #2c3837;
+$lightShade: #e9e9e9;
+$secondaryLightShade: #798486;
+$accentShade: #deafa7;
 
+//font variables start here
 
-@mixin primaryFont($size) {
-  font-family: "Roboto Condensed", Sans-Serif;
-  color: $black-shade;
-  font-size: $size * 1px;
-  font-size: ($size / 10) * 1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+$titleFont:'Fredoka One', cursive;
+$mainFont: "Cabin", Sans-Serif;
+
+//mixins start here
+
+@mixin titleFont($size, $lineHeight) {
+    color: $darkShade;
+    font-size: $size;
+    line-height: $lineHeight;
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    font-family: $titleFont;
 }
 
-@mixin secondaryFont($size) {
-  font-family: "Cabin", Sans-Serif;
-  color: $black-shade;
-  font-size: $size * 1px;
-  font-size: ($size / 10) * 1rem;
-  line-height: 32px;
+@mixin mainFont($size, $lineHeight) {
+    color: $darkShade;
+    font-size: $size;
+    line-height: $lineHeight;
+    font-family: $mainFont;
 }
 
 
@@ -29,17 +35,25 @@ html {
 }
 
 .wrapper {
-    max-width: 1200px;
+    max-width: 1100px;
     width: 80%;
     margin: 0 auto;
 }
 
 h1, h2 {
     margin: 0;
-    padding: 2rem 0;
-  
+    padding: 1.5rem 0;
 }
 
-.header {
-    height: 100vh;
+.section {
+    font-size: 1.8rem;  
+    @include mainFont(1.8rem, 1);
+ 
+}
+
+.btn {
+    
+    &:hover {
+        cursor: pointer;
+    }
 }
