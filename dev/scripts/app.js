@@ -80,9 +80,11 @@ app.getLyrics = function(id) {
       track_id: `${id}`
     }
   }).then(res => {
+    // console.log(res.message.body);
     const lyrics = res.message.body.lyrics.lyrics_body;
-
+    console.log(lyrics);
     app.displayLyrics(lyrics);
+
   });
 };
 
