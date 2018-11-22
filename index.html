@@ -11,15 +11,15 @@
     <!-- HEADER STARTS HERE -->
     <header class="header">
       <div class="wrapper">
-        <div class="header__content">
         <nav class="header__nav"></nav>
-        <h1>Title Placeholder</h1>
-        <h2>This is a placeholder for some information about the app</h2>
-        <form class="form form__search" action="" method="POST" name="search">
-          <label for="text" class="visuallyhidden">Search for artist or song.</label>
-          <input type="text" name="search" placeholder="Search for artist/song" required>
-          <button class="btn btn__search">Search</button>
-        </form>
+        <div class="header__content">
+          <h1>Title Placeholder</h1>
+          <h2>This is a placeholder for some information about the app</h2>
+          <form class="form form__search" action="" method="" name="search" id="search">
+            <label for="text" class="visuallyhidden">Search for artist or song.</label>
+            <input class="input__search " type="text" name="search" placeholder="Search for artist/song" required value="drake">
+            <button class="btn btn__search" type="submit" form="search" value="Submit">Search</button>
+          </form>
         </div>
       </div>
     </header>
@@ -31,7 +31,7 @@
           <div class="section__results__content">
             <h2>Choose your song</h2>
             <ul class="list__results">
-
+        
             </ul>
           </div>
         </div>
@@ -40,13 +40,13 @@
       <section class="section section__lyrics">
         <div class="wrapper">
           <div class="section__lyrics__content">
+            <h2>Lyrics</h2>
+            <p class="lyrics"></p>
             <button class="btn__languages">Vally Girl</button>
             <button class="btn__languages">Shakespeare</button>
             <button class="btn__languages">Writer</button>
             <button class="btn__languages">Gungan</button>
             <button class="btn__languages">Pirate</button>
-            <h2></h2>
-            <p></p>
           </div>
         </div>    
       </section>
@@ -55,7 +55,7 @@
         <div class="wrapper">
           <div class="section__translated__content">
             <h2></h2>
-            <p></p>
+            <p class="lyrics__translated"></p>
           </div>
         </div>
     </main>
