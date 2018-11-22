@@ -1,27 +1,36 @@
-.section__results {
-    // height: 50vh;
-    background-color: lightskyblue;
-    margin: 0;
+.list__results {
+    display: flex;
+    flex-wrap: wrap;
+        
+    &__item {
+        width: 50%;
+    }
+}
+        
+.btn__results {
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 1rem 0;
+    width: 100%;
+    color: $accentShade;
 
+    &:hover {
+//NAME A CLASS FOR THESE IN THE JS
+// ANIMATE TO GROW THE UNDERLINE
+        & h3 {
+            text-decoration: underline;
+            text-decoration-color: $accentShade;
+        }
 
-
-    .list__results {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        &__item {
-            width: 50%;
+        & p {
+            text-decoration: underline;
+            text-decoration-color: $lightShade;
         }
     }
-    
-    .btn__results {
-        text-align: left;
-        background: none;
-        border: none;
-        padding: 1rem 0;
-        width: 100%;
-       
+            
+    p {
+        color: $lightShade;
+        font-size: 1.6rem;
     }
 }

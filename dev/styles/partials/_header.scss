@@ -1,23 +1,60 @@
 .header {
     height: 100vh;
-    background: navajowhite;
+    background: $lightShade; 
+    @include titleFont(2rem);
+
+    &__nav {
+        height: 10vh;
+        width: 100%;
+        position: fixed;
+        background: $lightShade;
+        padding: 0 10%;
+
+        &__list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+    }
+
     &__content {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: start;
-        height: 100vh;
-    
+        height: 90vh;
     }
 
     .form__search {
         width: 60%;
+        font-family: $mainFont;
 
+        .input__search {
+            width: 100%;
+            background: $darkShade;
+            color: $accentShade;
+            margin: 1.5rem 0;
+            padding: 1rem 2rem 1rem 1rem;
+            border: none;
+//TRANSITION THIS
+            &:focus {
+                background: $accentShade;
+                color: $darkShade;
+            }
+        }
+        
+        .btn__search {
+            width: 30%;
+            padding: 1rem 1rem;
+            background: $lightShade;
+            border: 0.2rem solid $darkShade;
+//TRANSITION THIS
+            &:hover {
+                background: $darkShade;
+                color: $accentShade;
+            }
+        }
     }
-    .input__search {
-        width: 100%;
-        line-height: 2;
-    }
-
 }
 
