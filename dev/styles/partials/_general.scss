@@ -13,19 +13,18 @@ $mainFont: "Cabin", Sans-Serif;
 
 //mixins start here
 
-@mixin titleFont($size, $lineHeight) {
+@mixin titleFont($size) {
     color: $darkShade;
     font-size: $size;
-    line-height: $lineHeight;
+    line-height: 1.5;
     text-transform: capitalize;
     letter-spacing: 0.1rem;
     font-family: $titleFont;
 }
 
-@mixin mainFont($size, $lineHeight) {
+@mixin mainFont($size) {
     color: $darkShade;
     font-size: $size;
-    line-height: $lineHeight;
     font-family: $mainFont;
 }
 
@@ -45,10 +44,23 @@ h1, h2 {
     padding: 1.5rem 0;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .section {
     font-size: 1.8rem;  
-    @include mainFont(1.8rem, 1);
- 
+    @include mainFont(1.8rem); 
+    margin: 0;
+    background: $secondaryDarkShade;
+    padding: 2rem 0;
+    
+    &__content {
+        @include titleFont(1.8rem);
+        color: $accentShade;
+        padding: 2rem;  
+    }
 }
 
 .btn {
@@ -56,4 +68,10 @@ h1, h2 {
     &:hover {
         cursor: pointer;
     }
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }

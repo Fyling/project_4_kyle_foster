@@ -9,10 +9,17 @@
     <link rel="stylesheet" href="public/styles/style.css">
   </head>
   <body>
+    <a href="#skipNav" class="skip-link">Skip this menu to go to content.</a>
     <!-- HEADER STARTS HERE -->
     <header class="header">
-      <div class="wrapper">
-        <nav class="header__nav"></nav>
+      <nav class="header__nav">
+        <ul class="list header__nav__list">
+          <li class="header__nav__list__item"><a href="#">Home/Logo</a></li>
+<!-- CAN ADD IN THE SEARCH SENTENCE FORM UP HERE -->
+          <li class="header__nav__list__item"><a href="#">About fyling</a></li>
+        </ul>
+      </nav>
+      <div class="wrapper" id="skipNav">
         <div class="header__content">
           <h1>Title placeholder</h1>
           <h2>This is a placeholder for some information</h2>
@@ -27,22 +34,23 @@
     <!-- MAIN STARTS HERE -->
     <main>
       <!-- RESULTS SECTION STARTS -->
-      <section class="section section__results">
+      <section class="section section__results" id="results">
         <div class="wrapper">
-          <div class="section__results__content">
+          <div class="section__content section__results__content">
             <h2>Choose your song</h2>
-            <ul class="list__results">
+            <ul class="list list__results">
         
             </ul>
           </div>
         </div>
       </section>
       <!-- LYRICS SECTION STARTS -->
-      <section class="section section__lyrics">
+      <section class="section section__lyrics" id="chosenSong">
         <div class="wrapper">
-          <div class="section__lyrics__content">
+          <div class="section__content section__lyrics__content">
             <h2>Lyrics</h2>
             <p class="lyrics"></p>
+<!-- SHOULD THIS MOVE BELOW THE SECTIONS SO WHEN THEY APPEAR IT STAYS AT THE BOTTOM -->
             <button class="btn btn__languages">Vally Girl</button>
             <button class="btn btn__languages">Shakespeare</button>
             <button class="btn btn__languages">Writer</button>
@@ -52,9 +60,9 @@
         </div>    
       </section>
       <!-- TRANSLATED LYRICS START -->
-      <section class="section section__translated">
+      <section class="section section__translated" id="translatedSong">
         <div class="wrapper">
-          <div class="section__translated__content">
+          <div class="section__content section__translated__content">
             <h2></h2>
             <p class="lyrics__translated"></p>
           </div>

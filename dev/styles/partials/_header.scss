@@ -1,14 +1,29 @@
 .header {
     height: 100vh;
     background: $lightShade; 
-    @include titleFont(2rem, 1.5);
+    @include titleFont(2rem);
+
+    &__nav {
+        height: 10vh;
+        width: 100%;
+        position: fixed;
+        background: $lightShade;
+        padding: 0 10%;
+
+        &__list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+    }
 
     &__content {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: start;
-        height: 100vh;
+        height: 90vh;
     }
 
     .form__search {
@@ -17,7 +32,6 @@
 
         .input__search {
             width: 100%;
-            line-height: 2;
             background: $darkShade;
             color: $accentShade;
             margin: 1.5rem 0;
@@ -42,6 +56,5 @@
             }
         }
     }
-
 }
 

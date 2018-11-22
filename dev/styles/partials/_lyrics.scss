@@ -1,0 +1,11 @@
+.section__lyrics {
+    background: $lightShade;
+
+    &__content {
+        color: $darkShade;
+    }
+
+    .lyrics {
+        color: $secondaryDarkShade;
+    }
+}
