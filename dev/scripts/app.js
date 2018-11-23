@@ -82,8 +82,10 @@ app.getLyrics = function(id) {
   }).then(res => {
     console.log(res.message.body);
     const lyrics = res.message.body.lyrics.lyrics_body;
-    app.displayLyrics(lyrics);
+    const lyricsRemove = lyrics.split("...")[0];
+    app.displayLyrics(lyricsRemove);
   });
+
 };
 
 //displayLyrics
@@ -111,7 +113,7 @@ app.translate = function(language, lyrics) {
     method: "GET",
     dataType: "json",
     data: {
-      text: `"${lyrics}"`,
+      text: `${lyrics}`,
       format: "json"
     }
   })
@@ -141,8 +143,6 @@ app.displayTranslatedLyrics = function(text) {
 
 app.init = function() {
   app.getUserInput();
-  // app.translate();
-  // app.translate('yoda', "hello my name is yoda")
 };
 
 $(function() {
