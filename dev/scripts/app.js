@@ -57,7 +57,7 @@ app.displayResults = function(trackInfo) {
       </li>
     `);
   }
-  app.chooseResult();
+  // app.chooseResult();
 };
 
 //chooseResult
@@ -80,12 +80,10 @@ app.getLyrics = function(id) {
       track_id: `${id}`
     }
   }).then(res => {
-    console.log(res.message.body);
     const lyrics = res.message.body.lyrics.lyrics_body;
     const lyricsRemove = lyrics.split("...")[0];
     app.displayLyrics(lyricsRemove);
   });
-
 };
 
 //displayLyrics
@@ -103,7 +101,8 @@ app.cleanLyrics = function(text) {
 //getLanguage
 app.getLanguage = function(text) {
   const chosenLanguage = $(this).attr("id");
-  app.translate("article_rewrite", text);
+  console.log(chosenLanguage);
+  app.translate(chosenLanguage, text);
 };
 
 //translate
@@ -143,6 +142,7 @@ app.displayTranslatedLyrics = function(text) {
 
 app.init = function() {
   app.getUserInput();
+  app.chooseResult();
 };
 
 $(function() {
