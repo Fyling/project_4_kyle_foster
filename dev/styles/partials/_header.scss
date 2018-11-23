@@ -8,6 +8,7 @@
         width: 100%;
         position: fixed;
         background: $lightShade;
+        z-index: 1;
 
         &__list {
             display: flex;
@@ -18,10 +19,9 @@
             &__item {
                 
                 img {
-                    height: 5rem;
+                    height: 6rem;
                     margin-top: 1rem;
-//ANIMATE THIS ON HOVER, POSSIBLE USE SOMETHING LIKE IT RELEASING A MUSIC NOTE FOR THE TRANSLATE BUTTON
-                    
+//ANIMATE THIS ON HOVER, POSSIBLE USE SOMETHING LIKE IT RELEASING A MUSIC NOTE FOR THE TRANSLATE BUTTON  
                 }
             }
         }
