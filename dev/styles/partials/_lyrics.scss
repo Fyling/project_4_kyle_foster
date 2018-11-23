@@ -7,22 +7,49 @@
 
         &__translation {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            flex-wrap: wrap;
 
             &__btn {
-                font-family: $titleFont;
+                font-family: $mainFont;
                 color: $accentShade;
                 text-align: center;
-                padding-top: 2rem;
+                margin: 2rem 0 0 0;
+                width:20%;
+                min-width: 12rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                & input[type="radio"]:checked {
+                    background: red;  
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
 
                 img {
                     width: 10rem;
                     height: 10rem;
                     border-radius: 50%;
+                    // padding: 1px;
                 }
 
-                & input {
-                    display: none;
+            }
+            
+            & input {
+                display: none;
+
+                &[type="radio"]:checked+label img {
+                    border: 0.5rem solid $accentShade;
+                    width: 10.5rem;
+                    height: 10.5rem;
+                }
+
+                &[type="radio"]:checked+label h3 {
+                    font-family: $titleFont;
                 }
             }
         }
@@ -39,5 +66,20 @@
     }
 }
 
+@media (max-width: 950px) {
+    .section__lyrics {
 
-//ADD IN THE BEFORE AND AFTER QUOTES FOR THE LYRICS (can be in general styling so it happens to the translated as well)
+        &__content {
+
+            &__translation {
+
+                &__btn {
+
+                    & h3 {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

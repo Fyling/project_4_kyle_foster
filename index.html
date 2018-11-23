@@ -15,7 +15,7 @@
       <nav class="header__nav">
         <div class="wrapper">
           <ul class="list header__nav__list">
-            <li class="header__nav__list__item"><a href="#"><img src="dev/styles/assets/stubble.svg" alt="Image of a red beard"></a></li>
+            <li class="header__nav__list__item"><a href="#"><img src="/assets/stubble.svg" alt="Image of a red beard"></a></li>
               <!-- CAN ADD IN THE SEARCH SENTENCE FORM UP HERE -->
             <li class="header__nav__list__item"><a href="#">About Fyling</a></li>
           </ul>
@@ -48,30 +48,34 @@
           <h2>Lyrics</h2>
           <p class="lyrics songLyrics"></p>
           <div class="section__lyrics__content__translation">
-            <label class="section__lyrics__content__translation__btn">
-              <img src="dev/styles/assets/valleyGirl.jpg" alt="Photo of a VW bus by Oskars Sylwan on Unsplash.">
+            <input type="radio" value="valspeak" name="raido" id="valspeak">
+            <label class="section__lyrics__content__translation__btn" for="valspeak">
+              <img src="/assets/valleyGirl.jpg" alt="Photo of a VW bus by Oskars Sylwan on Unsplash.">
               <h3>Vally Girl</h3>
-              <input type="radio" value="valspeak" name="raido">
             </label>
-            <label class="section__lyrics__content__translation__btn">
-              <img src="dev/styles/assets/shakespeare.jpg" alt="Image of William Shakespeare.">
+
+            <input type="radio" name="raido" value="shakespeare" id="shakespeare">
+            <label class="section__lyrics__content__translation__btn" for="shakespeare">
+              <img src="/assets/shakespeare.jpg" alt="Image of William Shakespeare.">
               <h3>Shakespeare</h3>
-              <input type="radio" name="raido" value="shakespeare">
             </label>
-            <label class="section__lyrics__content__translation__btn">
-              <img src="dev/styles/assets/author.jpg" alt="Image of an old typewriter.">
-              <h3>Starbucks Author</h3>
-              <input type="radio" name="raido" value="author_rewrite">
+
+            <input type="radio" name="raido" value="author_rewrite" id="author-rewrite">
+            <label class="section__lyrics__content__translation__btn" for="author-rewrite">
+              <img src="/assets/author.jpg" alt="Image of an old typewriter.">
+              <h3>Author</h3>
             </label>
-            <label class="section__lyrics__content__translation__btn">
-              <img src="dev/styles/assets/" alt="">
-              <h3></h3>
-              <input type="radio" value="gungan" name="raido">
+
+            <input type="radio" value="gungan" name="raido" id="gungan">
+            <label class="section__lyrics__content__translation__btn" for="gungan">
+              <img src="/assets/gungan.jpg" alt="Image of the Gungan JarJar Binks">
+              <h3>Gungan</h3>
             </label>
-            <label class="section__lyrics__content__translation__btn">
-              <img src="dev/styles/assets/pirate.jpg" alt="Image of a pirate holding a knife.">
+
+            <input type="radio" value="pirate" name="raido" id="pirate">
+            <label class="section__lyrics__content__translation__btn" for="pirate">
+              <img src="/assets/pirate.jpg" alt="Image of a pirate holding a knife.">
               <h3>Pirate</h3>
-              <input type="radio" value="pirate" name="raido">
             </label>
         </div>    
       </section>
