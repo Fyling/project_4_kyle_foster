@@ -3,11 +3,28 @@
 
     &__content {
         color: $darkShade;
-    }
+        @include mainFont;
 
-    .lyrics {
-        color: $secondaryDarkShade;
+        &__translation {
+            display: flex;
+            justify-content: space-between;
+
+            & input {
+                background: $accentShade;
+            }
+        }
     }
 }
+
+.songLyrics {
+    color: $secondaryDarkShade;
+    column-count: 2;
+    position: relative;
+    
+    &::after {
+
+    }
+}
+
 
 //ADD IN THE BEFORE AND AFTER QUOTES FOR THE LYRICS (can be in general styling so it happens to the translated as well)

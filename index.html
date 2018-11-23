@@ -15,7 +15,7 @@
       <nav class="header__nav">
         <div class="wrapper">
           <ul class="list header__nav__list">
-            <li class="header__nav__list__item"><a href="#">Home/Logo</a></li>
+            <li class="header__nav__list__item"><a href="#"><img src="dev/styles/assets/beard.svg" alt="Image of a red beard"></a></li>
               <!-- CAN ADD IN THE SEARCH SENTENCE FORM UP HERE -->
             <li class="header__nav__list__item"><a href="#">About Fyling</a></li>
           </ul>
@@ -37,46 +37,54 @@
     <main>
       <!-- RESULTS SECTION STARTS -->
       <section class="section section__results" id="results">
-        <div class="wrapper">
-          <div class="section__content section__results__content">
+          <div class="section__content section__results__content wrapper">
             <h2>Choose your song</h2>
             <ul class="list list__results">
         
             </ul>
           </div>
-        </div>
       </section>
       <!-- LYRICS SECTION STARTS -->
       <section class="section section__lyrics" id="chosenSong">
-        <div class="wrapper">
-          <div class="section__content section__lyrics__content">
-            <h2>Lyrics</h2>
-            <p class="lyrics"></p>
-<!-- SHOULD THIS MOVE BELOW THE SECTIONS SO WHEN THEY APPEAR IT STAYS AT THE BOTTOM -->
-            <button class="btn btn__languages">Vally Girl</button>
-            <button class="btn btn__languages">Shakespeare</button>
-            <button class="btn btn__languages">Writer</button>
-            <button class="btn btn__languages">Gungan</button>
-            <button class="btn btn__languages">Pirate</button>
-          </div>
+        <div class="wrapper section__content section__lyrics__content">
+          <h2>Lyrics</h2>
+          <p class="lyrics songLyrics"></p>
+          <div class="section__lyrics__content__translation">
+            <label class="section__lyrics__content__translation__btn">
+              <input type="radio" value="valspeak" name="raido">
+              <!-- <span class="languageImg languageImg--valspeak"></span> -->
+            </label>
+            <label class="section__lyrics__content__translation__btn">
+              <input type="radio" name="raido" value="shakespeare">
+              <!-- <span class="languageImg languageImg--shakespeare"></span> -->
+            </label>
+            <label class="section__lyrics__content__translation__btn">
+              <input type="radio" name="raido" value="author_rewrite">
+              <!-- <span class="languageImg languageImg--author_rewrite"></span> -->
+            </label>
+            <label class="section__lyrics__content__translation__btn">
+              <input type="radio" value="gungan" name="raido">
+              <!-- <span class="languageImg languageImg--gungan"></span> -->
+            </label>
+            <label class="section__lyrics__content__translation__btn">
+              <input type="radio" value="pirate" name="raido">
+              <!-- <span class="languageImg languageImg--pirate"></span> -->
+            </label>
         </div>    
       </section>
       <!-- TRANSLATED LYRICS START -->
-      <section class="section section__translated" id="translatedSong">
-        <div class="wrapper">
-          <div class="section__content section__translated__content">
-            <h2></h2>
-            <p class="lyrics__translated"></p>
-          </div>
+      <!-- <section class="section section__translated" id="translatedSong">
+        <div class="wrapper section__content section__translated__content">
+          <h2></h2>
+          <p class="songLyrics lyrics__translated"></p>
         </div>
     </main>
-    
     <!-- FOOTER STARTS HERE -->
     <footer>
-    
+      <div class="visually-hidden">Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"
+          title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
+          target="_blank">CC 3.0 BY</a></div>
     </footer>
-    
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="./public/scripts/app.js"></script>
 	</body>

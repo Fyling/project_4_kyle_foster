@@ -1,10 +1,6 @@
 .list__results {
-    display: flex;
-    flex-wrap: wrap;
-        
-    &__item {
-        width: 50%;
-    }
+    column-count: 2;
+    @include mainFont;
 }
         
 .btn__results {
@@ -54,15 +50,5 @@
         &:hover p::after {
         width: 100%;
         transition: width .5s;
-    }    
-
-    // h3 {
-    //     display: inline-block;
-    //     margin-right: 25%;      
-    // }
-   
-            
-    
-
-    
+    }                
 }

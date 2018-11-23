@@ -1,7 +1,7 @@
 .header {
     height: 100vh;
     background: $lightShade; 
-    @include titleFont(2rem);
+    @include titleFont;
 
     &__nav {
         height: 10vh;
@@ -13,7 +13,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 10vh;
+            height: 7rem;
+
+            &__item {
+                
+                img {
+                    height: 5rem;
+                    margin-top: 1rem;
+//ANIMATE THIS ON HOVER, POSSIBLE USE SOMETHING LIKE IT RELEASING A MUSIC NOTE FOR THE TRANSLATE BUTTON
+                    
+                }
+            }
         }
     }
 
@@ -28,12 +38,13 @@
     .form__search {
         width: 60%;
         font-family: $mainFont;
+        display: flex;
 
         .input__search {
             width: 100%;
             background: $darkShade;
             color: $accentShade;
-            margin: 1.5rem 0;
+            // margin: 1.5rem 0;
             padding: 1rem 2rem 1rem 1rem;
             border: none;
 //TRANSITION THIS
