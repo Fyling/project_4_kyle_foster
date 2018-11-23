@@ -1,6 +1,6 @@
 .list__results {
     column-count: 2;
-    @include mainFont;
+    @include mainFont(18);
 }
         
 .btn__results {
