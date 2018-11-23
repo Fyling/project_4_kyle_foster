@@ -10,7 +10,9 @@
   </head>
   <body>
     <a href="#skipNav" class="skip-link">Skip this menu to go to content.</a>
+
     <!-- HEADER STARTS HERE -->
+
     <header class="header">
       <nav class="header__nav">
         <div class="wrapper">
@@ -31,9 +33,12 @@
         </form>
       </div>
     </header>
+
     <!-- MAIN STARTS HERE -->
     <main>
+
       <!-- RESULTS SECTION STARTS -->
+
       <section class="section section__results" id="results">
           <div class="section__content section__results__content wrapper">
             <h2>Choose your song</h2>
@@ -42,41 +47,45 @@
             </ul>
           </div>
       </section>
+
       <!-- LYRICS SECTION STARTS -->
-      <section class="section section__lyrics" id="chosenSong">
+
+      <section class="section section__lyrics" id="lyrics">
         <div class="wrapper section__content section__lyrics__content">
           <h2>Lyrics</h2>
           <p class="lyrics songLyrics"></p>
           <div class="section__lyrics__content__translation">
-            <input type="radio" value="valspeak" name="raido" id="valspeak">
-            <label class="section__lyrics__content__translation__btn" for="valspeak">
-              <img src="/assets/valleyGirl.jpg" alt="Photo of a VW bus by Oskars Sylwan on Unsplash.">
-              <h3>Vally Girl</h3>
-            </label>
-
-            <input type="radio" name="raido" value="shakespeare" id="shakespeare">
-            <label class="section__lyrics__content__translation__btn" for="shakespeare">
-              <img src="/assets/shakespeare.jpg" alt="Image of William Shakespeare.">
-              <h3>Shakespeare</h3>
-            </label>
-
-            <input type="radio" name="raido" value="author_rewrite" id="author-rewrite">
-            <label class="section__lyrics__content__translation__btn" for="author-rewrite">
-              <img src="/assets/author.jpg" alt="Image of an old typewriter.">
-              <h3>Author</h3>
-            </label>
-
-            <input type="radio" value="gungan" name="raido" id="gungan">
-            <label class="section__lyrics__content__translation__btn" for="gungan">
-              <img src="/assets/gungan.jpg" alt="Image of the Gungan JarJar Binks">
-              <h3>Gungan</h3>
-            </label>
-
-            <input type="radio" value="pirate" name="raido" id="pirate">
-            <label class="section__lyrics__content__translation__btn" for="pirate">
-              <img src="/assets/pirate.jpg" alt="Image of a pirate holding a knife.">
-              <h3>Pirate</h3>
-            </label>
+            <form class="form__language" action="">
+              <input class="visuallyhidden" type="radio" value="valspeak" name="radio" id="valspeak">
+              <label class="btn__translate" for="valspeak">
+                <img src="/assets/valleyGirl.jpg" alt="Photo of a VW bus by Oskars Sylwan on Unsplash.">
+                <h3>Vally Girl</h3>
+              </label>
+  
+              <input class="visuallyhidden" type="radio" name="radio" value="shakespeare" id="shakespeare">
+              <label class="btn__translate" for="shakespeare">
+                <img src="/assets/shakespeare.jpg" alt="Image of William Shakespeare.">
+                <h3>Shakespeare</h3>
+              </label>
+  
+              <input class="visuallyhidden" type="radio" name="radio" value="author_rewrite" id="author_rewrite">
+              <label class="btn__translate" for="author-rewrite">
+                <img src="/assets/author.jpg" alt="Image of an old typewriter.">
+                <h3>Author</h3>
+              </label>
+  
+              <input class="visuallyhidden" type="radio" value="gungan" name="radio" id="gungan">
+              <label class="btn__translate" for="gungan">
+                <img src="/assets/gungan.jpg" alt="Image of the Gungan JarJar Binks">
+                <h3>Gungan</h3>
+              </label>
+  
+              <input class="visuallyhidden" type="radio" value="pirate" name="radio" id="pirate">
+              <label class="btn__translate" for="pirate">
+                <img src="/assets/pirate.jpg" alt="Image of a pirate holding a knife.">
+                <h3>Pirate</h3>
+              </label>
+            </form>
         </div>    
       </section>
     </main>

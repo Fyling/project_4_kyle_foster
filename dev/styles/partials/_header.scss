@@ -1,7 +1,7 @@
 .header {
     height: 100vh;
     background: $lightShade; 
-    @include titleFont;
+    @include titleFont(18);
 
     &__nav {
         height: 10vh;
@@ -37,7 +37,7 @@
 
     .form__search {
         width: 60%;
-        font-family: $mainFont;
+        font-family: $mainFont(18);
         display: flex;
 
         .input__search {

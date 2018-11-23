@@ -9,6 +9,14 @@ app.getUserInput = function() {
     $(".list__results").empty();
     const userInput = $(".input__search").val();
     app.searchTracks(userInput);
+    // animate scroll to section
+    $(".section__results").fadeIn();
+    $("html, body").animate(
+      {
+        scrollTop: $("#results").offset().top - 80
+      },
+      800
+    );
 
     // scroll to results page
   });
@@ -65,6 +73,14 @@ app.chooseResult = function() {
   $(".list__results").on("click", ".list__results__item", function() {
     const chosenTrackId = $(this).attr("id");
     app.getLyrics(chosenTrackId);
+
+    $(".section__lyrics").fadeIn();
+    $("html, body").animate(
+      {
+        scrollTop: $("#lyrics").offset().top - 80
+      },
+      800
+    );
   });
 };
 
@@ -100,6 +116,7 @@ app.cleanLyrics = function(text) {
 
 //getLanguage
 app.getLanguage = function(text) {
+  $("");
   const chosenLanguage = $(this).attr("id");
   console.log(chosenLanguage);
   app.translate(chosenLanguage, text);
