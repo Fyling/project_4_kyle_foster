@@ -59,7 +59,7 @@ app.displayResults = function(trackInfo) {
     $(".list__results").append(`
       <li class ="list__results__item" id = "${trackInfo[i].id}">
         <button class= "btn__results">
-          <h3>${trackInfo[i].track}</h3>
+          <h3>${trackInfo[i].track}</h3></br>
           <p>${trackInfo[i].artist}</p>         
         </button>
       </li>

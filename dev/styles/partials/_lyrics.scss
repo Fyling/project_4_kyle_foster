@@ -7,45 +7,44 @@
 
     .form__language {
       display: flex;
-      justify-content: space-between;
-    }
+      justify-content: center;
+      position: relative;
+      flex-wrap: wrap;
 
-    .btn__translate {
-      font-family: $mainFont(18);
-      color: $accentShade;
-      text-align: center;
-      margin: 2rem 0 0 0;
-    //   width: 20%;
-    //   min-width: 12rem;
-    //   display: flex;
-    //   flex-direction: column;
-    //   justify-content: center;
-    //   align-items: center;
+      & input {
+        opacity: 0;
+        position: absolute;     
 
-      &:hover {
-        cursor: pointer;
+        &[type="radio"]:checked + label img {
+          border: 0.5rem solid $accentShade;
+          width: 10.5rem;
+          height: 10.5rem;
+        }
+
+        &[type="radio"]:checked + label h3 {
+          font-family: $titleFont;
+        }
       }
-
-      img {
-        width: 10rem;
-        height: 10rem;
-        border-radius: 50%;
-        // padding: 1px;
+      
+      .btn__translate {
+        margin: 2rem 0 0 0;
+        width: 20%;
+        min-width: 11rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+  
+        &:hover {
+          cursor: pointer;
+        }
+        
+        img {
+          width: 10rem;
+          height: 10rem;
+          border-radius: 50%;
+        }
       }
-
-    //   & input {
-    //     display: none;
-
-    //     &[type="radio"]:checked + label img {
-    //       border: 0.5rem solid $accentShade;
-    //       width: 10.5rem;
-    //       height: 10.5rem;
-    //     }
-
-    //     &[type="radio"]:checked + label h3 {
-    //       font-family: $titleFont;
-    //     }
-    //   }
     }
   }
 }
@@ -53,6 +52,7 @@
 .songLyrics {
   color: $secondaryDarkShade;
   column-count: 2;
+  column-gap: 2rem;
   position: relative;
 
   &::after {

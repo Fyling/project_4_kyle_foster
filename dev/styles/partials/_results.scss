@@ -1,6 +1,13 @@
+.section__results {
+    
+    h2 {
+        color: $accentShade;
+    }
+}    
+
 .list__results {
     column-count: 2;
-    @include mainFont(18);
+    column-gap: 2rem;
 }
         
 .btn__results {
@@ -8,14 +15,17 @@
     background: none;
     border: none;
     padding: 1rem 0;
-    color: $accentShade;
+    // display: flex;
+    // flex-direction: column;
 
 //NAME A CLASS FOR THESE IN THE JS
 // ANIMATE TO GROW THE UNDERLINE
 
     h3 {
         display: inline-block;
-        margin-right: 25%;      
+        // margin-right: 25%; 
+        box-orient: vertical;
+        margin: 1rem 0 0 0;
     }
     
     h3::after {
@@ -36,6 +46,8 @@
         color: $lightShade;
         font-size: 1.6rem;
         display:inline-block;
+        margin: 0.5rem 0;
+        
     }
 
     p::after {

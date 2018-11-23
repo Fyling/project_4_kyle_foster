@@ -20,8 +20,9 @@ $mainFont: "Cabin", Sans-Serif;
   color: $darkShade;
   font-size: $size * 1px;
   font-size: ($size / 10) * 1rem;
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: 1px;
+  line-height: 2;
 }
 
 @mixin mainFont($size) {
@@ -29,23 +30,8 @@ $mainFont: "Cabin", Sans-Serif;
   color: $darkShade;
   font-size: $size * 1px;
   font-size: ($size / 10) * 1rem;
-  line-height: 32px;
+  line-height: 1.5;
 }
-
-// @mixin titleFont {
-//     color: $darkShade;
-//     font-size: 2rem;
-//     line-height: 1.5;
-//     text-transform: capitalize;
-//     letter-spacing: 0.1rem;
-//     font-family: $titleFont;
-// }
-
-// @mixin mainFont {
-//     color: $darkShade;
-//     font-size: 1.8rem;
-//     font-family: $mainFont;
-// }
 
 
 html {
@@ -58,14 +44,26 @@ html {
     margin: 0 auto;
 }
 
-h1, h2 {
+h1 {
     margin: 0;
     padding: 1.5rem 0;
-    font-family: $titleFont(40);
+    @include titleFont(50);
+}
+
+h2 {
+    margin: 0;
+    padding: 1.5rem 0;
+    @include titleFont(30);
+}
+
+h3 {
+    @include mainFont(20);
+    color: $accentShade;
 }
 
 p {
     white-space: pre-line;
+    @include mainFont(18)
 }
 
 a {
@@ -74,13 +72,11 @@ a {
 }
 
 .section { 
-    @include mainFont(18); 
     margin: 0;
     background: $secondaryDarkShade;
     padding: 2rem 0;
     
     &__content {
-        @include titleFont(18);
         color: $accentShade;
         padding: 2rem;  
     }
