@@ -9,8 +9,21 @@
             display: flex;
             justify-content: space-between;
 
-            & input {
-                background: $accentShade;
+            &__btn {
+                font-family: $titleFont;
+                color: $accentShade;
+                text-align: center;
+                padding-top: 2rem;
+
+                img {
+                    width: 10rem;
+                    height: 10rem;
+                    border-radius: 50%;
+                }
+
+                & input {
+                    display: none;
+                }
             }
         }
     }
