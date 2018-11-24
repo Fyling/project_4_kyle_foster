@@ -16,11 +16,15 @@
             align-items: center;
             height: 7rem;
 
-            &__item {
-                
+            &__item {                
                 img {
                     height: 6rem;
                     margin-top: 1rem;
+
+                    &:hover {
+                        animation: shake 2s infinite;
+                    }
+
 //ANIMATE THIS ON HOVER, POSSIBLE USE SOMETHING LIKE IT RELEASING A MUSIC NOTE FOR THE TRANSLATE BUTTON  
                 }
             }
@@ -37,14 +41,14 @@
 
     .form__search {
         width: 60%;
-        font-family: $mainFont(18);
+        @include mainFont(18);
         display: flex;
 
         .input__search {
             width: 100%;
+            min-width: 20rem;
             background: $darkShade;
             color: $accentShade;
-            // margin: 1.5rem 0;
             padding: 1rem 2rem 1rem 1rem;
             border: none;
 //TRANSITION THIS
@@ -56,9 +60,11 @@
         
         .btn__search {
             width: 30%;
+            min-width: 10rem;
             padding: 1rem 1rem;
             background: $lightShade;
             border: 0.2rem solid $darkShade;
+            
 //TRANSITION THIS
             &:hover {
                 background: $darkShade;
@@ -66,5 +72,12 @@
             }
         }
     }
+}
+
+@keyframes shake {
+    0%    { transform: scale(1); }
+    50%  {  transform: scale(1.5);
+            margin-top: 3rem; }
+    100% {  transform: scale(1);}
 }
 
