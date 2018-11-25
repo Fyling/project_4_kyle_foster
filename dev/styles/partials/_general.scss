@@ -1,19 +1,16 @@
 //color variables start here
 
-$darkShade: #000;
-$secondaryDarkShade: #2c3837;
-$lightShade: #e9e9e9;
-$secondaryLightShade: #798486;
+$darkShade: #211D19;
+$secondaryDarkShade: #3F3C38;
+$lightShade: #fafafa;
 $accentShade: #F29B38;
-
 
 //font variables start here
 
-$titleFont:'Fredoka One', cursive;
-$mainFont: "Cabin", Sans-Serif;
+$titleFont:'Playfair Display', serif;
+$mainFont: 'Source Sans Pro', sans-serif;
 
 //mixins start here
-
 
 @mixin titleFont($size) {
   font-family: $titleFont;
@@ -22,7 +19,6 @@ $mainFont: "Cabin", Sans-Serif;
   font-size: ($size / 10) * 1rem;
   text-transform: capitalize;
   letter-spacing: 1px;
-  line-height: 2;
 }
 
 @mixin mainFont($size) {
@@ -30,7 +26,7 @@ $mainFont: "Cabin", Sans-Serif;
   color: $darkShade;
   font-size: $size * 1px;
   font-size: ($size / 10) * 1rem;
-  line-height: 1.5;
+  line-height: 1.3;
 }
 
 
@@ -44,24 +40,27 @@ html {
     margin: 0 auto;
 }
 
-h1 {
+.titleHeading {
     margin: 0;
     padding: 1.5rem 0;
-    @include titleFont(50);
+    @include titleFont(70);
+    text-transform: uppercase;
 }
 
-h2 {
+.mainHeading {
     margin: 0;
-    padding: 1.5rem 0;
+    padding: 3rem 0;
     @include titleFont(30);
+    text-transform: uppercase;
 }
 
-h3 {
+.subHeading {
     @include mainFont(20);
     color: $accentShade;
+    text-transform: uppercase;
 }
 
-p {
+.sectionText {
     white-space: pre-line;
     @include mainFont(18)
 }
@@ -74,11 +73,10 @@ a {
 .section { 
     margin: 0;
     background: $secondaryDarkShade;
-    padding: 2rem 0;
+    // padding: 2rem 0;
     
     &__content {
         color: $accentShade;
-        padding: 2rem;  
     }
 
     &__results, &__lyrics {
