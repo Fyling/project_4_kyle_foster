@@ -6,7 +6,6 @@
     &__nav {
         height: 10vh;
         width: 100%;
-        position: fixed;
         background: $lightShade;
         z-index: 1;
 
@@ -24,8 +23,6 @@
                     &:hover {
                         animation: shake 2s infinite;
                     }
-
-//ANIMATE THIS ON HOVER, POSSIBLE USE SOMETHING LIKE IT RELEASING A MUSIC NOTE FOR THE TRANSLATE BUTTON  
                 }
             }
         }
@@ -36,7 +33,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: start;
-        height: 100vh;
+        height: 90vh;
     }
 
     .form__search {
@@ -51,6 +48,7 @@
             color: $accentShade;
             padding: 1rem 2rem 1rem 1rem;
             border: none;
+            flex-grow: 1;
 //TRANSITION THIS
             &:focus {
                 background: $accentShade;
@@ -79,5 +77,11 @@
     50%  {  transform: scale(1.5);
             margin-top: 3rem; }
     100% {  transform: scale(1);}
+}
+
+@media (max-width: 800px) {
+    .form__search {
+        min-width: 100%;
+    }
 }
 

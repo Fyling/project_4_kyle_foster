@@ -59,16 +59,21 @@
   }
 }
 
-@media (max-width: 950px) {
-  .section__lyrics {
-    &__content {
-      &__translation {
-        &__btn {
-          & h3 {
-            display: none;
-          }
-        }
-      }
+@media (max-width: 800px) {
+  .songLyrics {
+    column-count: 1;
+  }
+}
+
+@media (max-width: 650px) {
+  .wrapper {
+    width: 95%;
+  }  
+  
+  .btn__translate {
+
+    h3 {
+      display: none;
     }
   }
 }

@@ -15,15 +15,11 @@
     background: none;
     border: none;
     padding: 1rem 0;
-    // display: flex;
-    // flex-direction: column;
 
 //NAME A CLASS FOR THESE IN THE JS
-// ANIMATE TO GROW THE UNDERLINE
 
     h3 {
         display: inline-block;
-        // margin-right: 25%; 
         box-orient: vertical;
         margin: 1rem 0 0 0;
     }
@@ -63,4 +59,11 @@
         width: 100%;
         transition: width .5s;
     }                
+}
+
+@media (max-width: 650px) {
+
+    .list__results {
+        column-count: 1;
+    }
 }
