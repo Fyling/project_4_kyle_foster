@@ -65,23 +65,24 @@ app.displayResults = function(trackInfo) {
       </li>
     `);
   }
-  // app.chooseResult();
 };
 
-//chooseResult
-app.chooseResult = function() {
-  $(".list__results").on("click", ".list__results__item", function() {
-    const chosenTrackId = $(this).attr("id");
-    app.getLyrics(chosenTrackId);
+$(".list__results").on("click", ".list__results__item", function() {
+  app.chooseResult(this);
+}); 
 
-    $(".section__lyrics").fadeIn();
-    $("html, body").animate(
-      {
-        scrollTop: $("#lyrics").offset().top - 80
-      },
-      800
-    );
-  });
+//chooseResult
+app.chooseResult = function(item) {
+  let chosenTrackId = $(item).attr("id");
+  app.getLyrics(chosenTrackId);
+
+  $(".section__lyrics").fadeIn();
+  $("html, body").animate(
+    {
+      scrollTop: $("#lyrics").offset().top - 80
+    },
+    800
+  );
 };
 
 //getLyrics
@@ -110,17 +111,17 @@ app.displayLyrics = function(text) {
 
 //cleanLyrics
 app.cleanLyrics = function(text) {
-  const cleanLyrics = text.split("\n").join("xyz");
-  app.getLanguage(cleanLyrics);
+  app.lyricsToBeTranslated = text.split("\n").join("xyz");
 };
 
 //getLanguage
-app.getLanguage = function(text) {
-  $("");
-  const chosenLanguage = $(this).attr("id");
-  console.log(chosenLanguage);
-  app.translate(chosenLanguage, text);
-};
+$("input:radio").on("change", function() {
+  let chosenLanguage = $(this).attr("id");
+  // console.log(chosenLanguage);
+  // console.log(app.lyricsToBeTranslated)
+  app.translate(chosenLanguage, app.lyricsToBeTranslated);
+});
+
 
 //translate
 app.translate = function(language, lyrics) {
@@ -150,7 +151,7 @@ app.formatLyrics = function(text) {
 
 //displayTranslatedLyrics
 app.displayTranslatedLyrics = function(text) {
-  $(".lyrics__translated").text(`${text}`);
+  $(".lyrics").text(`${text}`);
 };
 
 // STRETCH GOAL: speakTranslatedLyrics
@@ -159,7 +160,7 @@ app.displayTranslatedLyrics = function(text) {
 
 app.init = function() {
   app.getUserInput();
-  app.chooseResult();
+  // app.chooseResult();
 };
 
 $(function() {
