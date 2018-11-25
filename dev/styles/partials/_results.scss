@@ -1,20 +1,26 @@
 .section__results {
+    min-height: 100vh;
+    padding: 0;
     
-    h2 {
+    .mainHeading {
         color: $accentShade;
+        border-bottom: solid 1px rgba($lightShade, 0.5);
     }
 }    
 
 .list__results {
     column-count: 2;
     column-gap: 2rem;
+    padding: 3rem 0;
+    line-height: 1;
 }
         
 .btn__results {
     text-align: left;
     background: none;
     border: none;
-    padding: 1rem 0;
+    padding-bottom: 2rem;
+
 
 //NAME A CLASS FOR THESE IN THE JS
 
@@ -28,8 +34,8 @@
         content: '';
         display: block;
         width: 0;
-        height: 0.2rem;
-        background: $accentShade;
+        height: 0.1rem;
+        background: rgba($accentShade, 0.5);
         transition: width .5s;
     }
 
@@ -50,8 +56,8 @@
         content: '';
         display: block;
         width: 0;
-        height: 0.2rem;
-        background: $lightShade;
+        height: 0.1rem;
+        background: rgba($lightShade, 0.5);
         transition: width .5s;
     }
 

@@ -13,7 +13,7 @@ app.getUserInput = function() {
     $(".section__results").fadeIn();
     $("html, body").animate(
       {
-        scrollTop: $("#results").offset().top - 80
+        scrollTop: $("#results").offset().top
       },
       800
     );
@@ -59,8 +59,8 @@ app.displayResults = function(trackInfo) {
     $(".list__results").append(`
       <li class ="list__results__item" id = "${trackInfo[i].id}">
         <button class= "btn__results">
-          <h3>${trackInfo[i].track}</h3></br>
-          <p>${trackInfo[i].artist}</p>         
+          <h3 class="subHeading">${trackInfo[i].track}</h3></br>
+          <p class="sectionText">${trackInfo[i].artist}</p>         
         </button>
       </li>
     `);
@@ -79,7 +79,7 @@ app.chooseResult = function(item) {
   $(".section__lyrics").fadeIn();
   $("html, body").animate(
     {
-      scrollTop: $("#lyrics").offset().top - 80
+      scrollTop: $("#lyrics").offset().top
     },
     800
   );

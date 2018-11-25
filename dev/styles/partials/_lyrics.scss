@@ -1,9 +1,25 @@
 .section__lyrics {
   background: $lightShade;
+  min-height: 100vh;
 
   &__content {
     color: $darkShade;
     @include mainFont(18);
+
+    & .mainHeading {
+      border-bottom: solid 1px rgba($accentShade, 0.5);
+    }
+
+    &__translation {
+
+      .dialectTitle {
+        @include mainFont(25);
+        text-align: center;
+        border-top: solid 1px rgba($accentShade, 0.5);
+        border-bottom: solid 0px;
+        padding-top: 3rem;
+      }
+    }
 
     .form__language {
       display: flex;
@@ -22,7 +38,7 @@
         }
 
         &[type="radio"]:checked + label h3 {
-          font-family: $titleFont;
+          color: $accentShade;
         }
       }
       
@@ -34,6 +50,13 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        text-transform: uppercase;
+
+        & .sectionText {
+           font-family: $titleFont;
+           font-weight: normal;
+
+        }
   
         &:hover {
           cursor: pointer;

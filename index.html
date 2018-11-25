@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Raleway:400,400i,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Source+Sans+Pro" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css'>
     <title>Project #4 - Kyle and Foster</title>
     <link rel="stylesheet" href="public/styles/style.css">
@@ -18,15 +18,15 @@
       <nav class="header__nav">
         <div class="wrapper">
           <ul class="list header__nav__list">
-            <li class="header__nav__list__item"><a href="#"><img src="/assets/stubble.svg" alt="Image of a red beard"></a></li>
+            <li class="header__nav__list__item"><img src="/assets/stubble.svg" alt="Image of a red beard"></li>
               <!-- CAN ADD IN THE SEARCH SENTENCE FORM UP HERE -->
-            <li class="header__nav__list__item"><a href="#">About Fyling</a></li>
+            <h3 class="header__nav__list__item subHeading">Fyling</h3>
           </ul>
         </div>
       </nav>
       <div class="wrapper header__content" id="skipNav">
-        <h1>Dialect Ditty</h1>
-        <h2>Render your favourite song in a dialect</h2>
+        <h1 class="titleHeading">Dialect Ditty</h1>
+        <h2 class="mainHeading">Render your favourite song in a dialect</h2>
         <form class="form form__search" action="" method="" name="search" id="search">
           <label for="text" class="visuallyhidden">Search for artist or song.</label>
           <input class="input__search " type="text" name="search" placeholder="Search for artist/song" required value="bruno mars">
@@ -42,7 +42,7 @@
 
       <section class="section section__results" id="results">
           <div class="section__content section__results__content wrapper">
-            <h2>Choose your song</h2>
+            <h2 class="mainHeading">Choose your song</h2>
             <ul class="list list__results">
         
             </ul>
@@ -53,41 +53,44 @@
 
       <section class="section section__lyrics" id="lyrics">
         <div class="wrapper section__content section__lyrics__content">
-          <h2>Lyrics</h2>
-          <p class="lyrics songLyrics"></p>
+          <h2 class="section__results__title mainHeading">Lyrics</h2>
+          <p class="lyrics songLyrics sectionText"></p>
+          
           <div class="section__lyrics__content__translation">
+            <h2 class="subHeading dialectTitle">Choose a dialect to translate</h2>
             <form class="form__language" action="">
               <input type="radio" value="valspeak" name="radio" id="valspeak">
               <label class="btn__translate" for="valspeak">
                 <img src="/assets/valleyGirl.jpg" alt="Photo of a VW bus by Oskars Sylwan on Unsplash.">
-                <h3>Vally Girl</h3>
+                <h3 class="sectionText">Vally Girl</h3>
               </label>
   
               <input type="radio" name="radio" value="shakespeare" id="shakespeare">
               <label class="btn__translate" for="shakespeare">
                 <img src="/assets/shakespeare.jpg" alt="Image of William Shakespeare.">
-                <h3>Shakespeare</h3>
+                <h3 class="sectionText">Shakespeare</h3>
               </label>
   
               <input type="radio" name="radio" value="author_rewrite" id="article_rewrite">
               <label class="btn__translate" for="article_rewrite">
                 <img src="/assets/author.jpg" alt="Image of an old typewriter.">
-                <h3>Author</h3>
+                <h3 class="sectionText">Author</h3>
               </label>
   
               <input type="radio" value="gungan" name="radio" id="gungan">
               <label class="btn__translate" for="gungan">
                 <img src="/assets/gungan.jpg" alt="Image of the Gungan JarJar Binks">
-                <h3>Gungan</h3>
+                <h3 class="sectionText">Gungan</h3>
               </label>
   
               <input type="radio" value="pirate" name="radio" id="pirate">
               <label class="btn__translate" for="pirate">
                 <img src="/assets/pirate.jpg" alt="Image of a pirate holding a knife.">
-                <h3>Pirate</h3>
+                <h3 class="sectionText">Pirate</h3>
               </label>
             </form>
-        </div>    
+        </div>   
+        
       </section>
     </main>
 
