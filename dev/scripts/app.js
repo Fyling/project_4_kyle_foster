@@ -18,7 +18,6 @@ app.getUserInput = function() {
       800
     );
 
-    // scroll to results page
   });
 };
 
@@ -69,6 +68,7 @@ app.displayResults = function(trackInfo) {
 
 $(".list__results").on("click", ".list__results__item", function() {
   app.chooseResult(this);
+  $("input:radio").prop("checked", false);
 }); 
 
 //chooseResult
@@ -117,9 +117,7 @@ app.cleanLyrics = function(text) {
 //getLanguage
 $("input:radio").on("change", function() {
   let chosenLanguage = $(this).attr("id");
-  // console.log(chosenLanguage);
-  // console.log(app.lyricsToBeTranslated)
-  // app.translate(chosenLanguage, app.lyricsToBeTranslated);
+  app.translate(chosenLanguage, app.lyricsToBeTranslated);
 });
 
 

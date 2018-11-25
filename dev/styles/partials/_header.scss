@@ -1,97 +1,88 @@
 .header {
-    height: 100vh;
-    background: $lightShade; 
+  height: 100vh;
+  background: $lightShade;
+  background-image: url(/assets/topography.svg);
+  
 
-    &__nav {
-        height: 10vh;
-        width: 100%;
-        background: $lightShade;
-        z-index: 1;
+  &__nav {
+    width: 100%;
+    background: $lightShade;
+    z-index: 1;
+    border-bottom: 1px solid rgba($accentShade, 0.3);
 
-        &__list {
-            display: flex;
-            // justify-content: space-between;
-            align-items: center;
-            height: 7rem;
+    &__list {
+      display: flex;
+      align-items: center;
 
-            &__item { 
-                padding: 0;
-                @include titleFont(30);
-
-                img {
-                    height: 6rem;
-                    margin-top: 2rem;
-
-                    &:hover {
-                        animation: shake 2s infinite;
-                    }
-                }
-            }
-        }
+      &__item {
+        margin: 0 3px;
+        @include titleFont(30);
+        font-weight: normal;
+        text-transform: capitalize;
+      }
     }
 
-    &__content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: start;
-        height: 90vh;
+    & img {
+      height: 7rem;
+    }
+  }
 
-        & .titleHeading {
-            padding: 0;
-        }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    height: 90vh;
 
-        & .mainHeading {
-            @include mainFont(20);
-            font-weight: normal;
-            padding: 0;
-        }
+    & .titleHeading {
+      padding: 0;
     }
 
-    .form__search {
-        width: 60%;
-        @include mainFont(18);
-        display: flex;
-        margin: 6rem 0 0 0;
-        box-shadow: 0px 3px 2px rgba($darkShade, 0.3);
-
-        .input__search {
-            width: 100%;
-            min-width: 20rem;
-            background: $lightShade;
-            border: solid 1px rgba($darkShade, 0.3);
-            padding: 1rem 2rem 1rem 1rem;
-            flex-grow: 1;
-
-            &:focus {
-                box-shadow: 0px 6px 6px rgba($darkShade, 0.2);
-            }
-        }
-        
-        .btn__search {
-            width: 30%;
-            min-width: 10rem;
-            padding: 1rem 1rem;
-            background: $accentShade;
-            border: solid 1px rgba($darkShade, 0.3);
-           
-            &:hover {
-                box-shadow: 0px 6px 6px rgba($darkShade, 0.2);
-            }
-        }
+    & .mainHeading {
+      @include mainFont(20);
+      font-weight: normal;
+      padding: 0;
     }
-}
+  }
 
-@keyframes shake {
-    0%    { transform: scale(1); }
-    50%  {  transform: scale(1.5);
-            margin-top: 3rem; }
-    100% {  transform: scale(1);}
+  .form__search {
+    width: 60%;
+    @include mainFont(18);
+    text-transform: uppercase;
+    display: flex;
+    margin: 6rem 0 0 0;
+    box-shadow: 0px 3px 2px rgba($darkShade, 0.3);
+
+    .input__search {
+      width: 100%;
+      min-width: 20rem;
+      background: $lightShade;
+      border: solid 1px rgba($darkShade, 0.3);
+      padding: 1rem 2rem 1rem 1rem;
+      flex-grow: 1;
+
+      &:focus {
+        box-shadow: 0px 6px 6px rgba($darkShade, 0.2);
+      }
+    }
+
+    .btn__search {
+      width: 30%;
+      min-width: 10rem;
+      padding: 1rem 1rem;
+      background: $accentShade;
+      border: solid 1px rgba($darkShade, 0.3);
+      
+
+      &:hover {
+        box-shadow: 0px 6px 6px rgba($darkShade, 0.2);
+      }
+    }
+  }
 }
 
 @media (max-width: 800px) {
-    .form__search {
-        min-width: 100%;
-    }
+  .form__search {
+    min-width: 100%;
+  }
 }
-
