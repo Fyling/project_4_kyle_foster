@@ -119,7 +119,7 @@ $("input:radio").on("change", function() {
   let chosenLanguage = $(this).attr("id");
   // console.log(chosenLanguage);
   // console.log(app.lyricsToBeTranslated)
-  app.translate(chosenLanguage, app.lyricsToBeTranslated);
+  // app.translate(chosenLanguage, app.lyricsToBeTranslated);
 });
 
 
