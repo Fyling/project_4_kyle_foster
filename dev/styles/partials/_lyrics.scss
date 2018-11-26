@@ -11,7 +11,6 @@
     }
 
     &__translation {
-
       .dialectTitle {
         @include mainFont(25);
         text-align: center;
@@ -29,7 +28,7 @@
 
       & input {
         opacity: 0;
-        position: absolute;     
+        position: absolute;
 
         &[type="radio"]:checked + label img {
           border: 0.5rem solid $accentShade;
@@ -37,11 +36,15 @@
           height: 10.5rem;
         }
 
+        &[type="radio"]:focus + label h3 {
+          border-bottom: 2px solid $accentShade;
+        }
+
         &[type="radio"]:checked + label h3 {
           color: $accentShade;
         }
       }
-      
+
       .btn__translate {
         margin: 2rem 0 0 0;
         width: 20%;
@@ -53,15 +56,14 @@
         text-transform: uppercase;
 
         & .sectionText {
-           font-family: $titleFont;
-           font-weight: normal;
-
+          font-family: $titleFont;
+          font-weight: normal;
         }
-  
+
         &:hover {
           cursor: pointer;
         }
-        
+
         img {
           width: 10rem;
           height: 10rem;
@@ -77,9 +79,6 @@
   column-count: 2;
   column-gap: 2rem;
   position: relative;
-
-  &::after {
-  }
 }
 
 @media (max-width: 800px) {
@@ -91,10 +90,9 @@
 @media (max-width: 650px) {
   .wrapper {
     width: 95%;
-  }  
-  
-  .btn__translate {
+  }
 
+  .btn__translate {
     h3 {
       display: none;
     }

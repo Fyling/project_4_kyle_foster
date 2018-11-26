@@ -1,7 +1,7 @@
 //color variables start here
 
-$darkShade: #211D19;
-$secondaryDarkShade: #3F3C38;
+$darkShade: #171717;
+$secondaryDarkShade: #2c3837;
 $lightShade: #fafafa;
 $accentShade: #F29B38;
 
@@ -73,6 +73,9 @@ a {
 .section { 
     margin: 0;
     background: $secondaryDarkShade;
+
+
+    
     // padding: 2rem 0;
     
     &__content {

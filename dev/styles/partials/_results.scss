@@ -19,7 +19,7 @@
     text-align: left;
     background: none;
     border: none;
-    padding-bottom: 2rem;
+    padding: 0 0 4rem 0;
 
 
 //NAME A CLASS FOR THESE IN THE JS
@@ -39,16 +39,16 @@
         transition: width .5s;
     }
 
-        &:hover h3::after {
+        &:hover h3::after, &:focus h3::after {
         width: 100%;
         transition: width .5s;
     }
 
     p {
         color: $lightShade;
-        font-size: 1.6rem;
         display:inline-block;
         margin: 0.5rem 0;
+        font-weight: normal;
         
     }
 
@@ -61,7 +61,7 @@
         transition: width .5s;
     }
 
-        &:hover p::after {
+        &:hover p::after, &:focus p::after {
         width: 100%;
         transition: width .5s;
     }                
