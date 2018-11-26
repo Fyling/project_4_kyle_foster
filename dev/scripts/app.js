@@ -1,6 +1,6 @@
 const app = {};
 app.key = "540e4c236775290b40b72fc239da1950";
-app.baseUrl = "http://api.musixmatch.com/ws/1.1/";
+app.baseUrl = "https://api.musixmatch.com/ws/1.1/";
 
 //getUserInput
 app.getUserInput = function() {
